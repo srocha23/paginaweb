@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+	<title>Watch Store</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+	<link rel="icon" type="img/jpeg" href="{% static "img/icon.jpeg" %}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Sofia+Sans:ital,wght@1,900&display=swap"
+		rel="stylesheet">
+    <link type='text/css' href='{% static "css/estilos.css" %}'' rel='stylesheet'/>
+
+</head>
+<body>
+    <header class="main-header">
+		<div class="container container--flex">
+			<div class="main-header__container">
+				<h1 class="main-header__title">Watch Store</h1>
+				<span class="icon-menu " id="btn-menu"><i class="fa-solid fa-bars"></i></span>
+				<nav class="main-nav" id="main-nav">
+					<ul class="menu">
+						<li class="menu__item"><a href="{% url 'index_inicio' %}" class="menu__link">Home</a></li>
+						<li class="menu__item"><a href="nosotros_index" class="menu__link">About</a></li>
+						<li class="menu__item"><a href="catalogo-index" class="menu__link">Shop</a></li>
+						<li class="menu__item"><a href="" class="menu__link">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="main-header__container">
+				<span class="main-header__txt">Need Help</span>
+				<p class="main-header__txt"> <i class="fa-solid fa-phone"></i> Call 3108832871</p>
+			</div>
+			<div class="main-header__container">
+				<a href="" class="main-header__link"><i class="fa-solid fa-user"></i></a>
+				<a href="carrito.html" class="main-header__btn"><i class="fa-solid fa-cart-shopping"></i> My cart</a>
+				<input type="search" class="main-header__input" placeholder="Buscar productos"><i
+					class="fa-sharp fa-solid fa-magnifying-glass"></i>
+			</div>
+		</div>
+	</header>
+</body>
+</html>

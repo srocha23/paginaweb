@@ -1,0 +1,154 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<title>Watch Store</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+	<link rel="icon" type="img/jpeg" href="{% static "img/icon.jpeg" %}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Sofia+Sans:ital,wght@1,900&display=swap"
+		rel="stylesheet">
+    <link type='text/css' href='{% static "css/estilos.css" %}'' rel='stylesheet'/>
+
+</head>
+<body>
+	{% include  'header.html' %}
+
+	<div class="container-slider">
+		<div class="slider" id="slider">
+
+			<div class="slider__section">
+				<img src="{% static "img/reloj_2.jpg" %}" alt="" class="slider__img">
+				<div class="slider_content">
+					<h2 class="slider__title">Do you want be esclusive</h2>
+					<p class="slider__txt">Esclusive</p>
+					<a href="catalogo-index" class="btn-shop">SHOP NOW</a>
+				</div>
+			</div>
+			<div class="slider__section">
+				<img src="{% static "img/reloj_1.jpg" %}" alt="" class="slider__img">
+				<div class="slider_content">
+					<h2 class="slider__title">Dreams make real</h2>
+					<p class="slider__txt">You watch perfect</p>
+					<a href="catalogo-index" class="btn-shop">SHOP NOW</a>
+
+				</div>
+			</div>
+			<div class="slider__section">
+				<img src="{% static "img/reloj_5.jpg" %}" alt="" class="slider__img">
+				<div class="slider_content">
+					<h2 class="slider__title">Do you want be esclusive</h2>
+					<p class="slider__txt">Esclusive</p>
+					<a href="catalogo-index" class="btn-shop">SHOP NOW</a>
+				</div>
+			</div>
+
+			<div class="slider__section">
+				<img src="{% static "img/reloj_3.jpg" %}" alt="" class="slider__img">
+				<div class="slider_content">
+					<h2 class="slider__title">Dreams make real</h2>
+					<p class="slider__txt">Esclusive</p>
+					<a href="catalogo-index" class="btn-shop">SHOP NOW</a>
+				</div>
+			</div>
+
+			<div class="slider__section">
+				<img src="{% static "img/reloj_4.jpg" %}" alt="" class="slider__img">
+				<div class="slider_content">
+					<h2 class="slider__title">Do you want be esclusive</h2>
+					<p class="slider__txt">Esclusive</p>
+					<a href="catalogo-index" class="btn-shop">SHOP NOW</a>
+				</div>
+			</div>
+
+		</div>
+		<div class="slider__btn slider__btn--right" id="btn-right"><i class="fa-solid fa-arrow-right"></i></div>
+		<div class="slider__btn slider__btn--left" id="btn-left"><i class="fa-solid fa-arrow-left"></i></div>
+	</div>
+
+	<main class="main">
+		<div class="container">
+			<h2 class="main-title">New Arrivalas for you</h2>
+
+			<section class="container-productos">
+
+				<div class="product">
+					<img src="{% static "img/reloj_7.jpg" %}" alt="" class="product__img">
+					<div class="product__description">
+						<h3 class="product__title">Rolex</h3>
+						<span class="product__price">$15.000.000.000</span>
+					</div>
+					<a href=""><i class="product__icon fa-sharp fa-solid fa-cart-plus"></i></a>
+				</div>
+				<div class="product">
+					<img src="{% static "img/reloj_8.jpg" %}" alt="" class="product__img">
+					<div class="product__description">
+						<h3 class="product__title">Casio</h3>
+						<span class="product__price">$2.000.000.000</span>
+					</div>
+					<a href=""><i class="product__icon fa-sharp fa-solid fa-cart-plus"></i></a>
+				</div>
+				<div class="product">
+					<img src="{% static "img/reloj_9.jpg" %}" alt="" class="product__img">
+					<div class="product__description">
+						<h3 class="product__title">G-Shock</h3>
+						<span class="product__price">$450.000</span>
+					</div>
+					<a href=""><i class="product__icon fa-sharp fa-solid fa-cart-plus"></i></a>
+				</div>
+				<div class="product">
+					<img src="{% static "img/reloj_10.jpg" %}" alt="" class="product__img">
+					<div class="product__description">
+						<h3 class="product__title">Mamba</h3>
+						<span class="product__price">$1.500.000.000</span>
+					</div>
+					<a href=""><i class="product__icon fa-sharp fa-solid fa-cart-plus"></i></a>
+				</div>
+			</section>
+
+			<section class="container__testimonials">
+				<h2 class="section__title">Testimonials</h2>
+				<h3 class="testimonial__title">Forsar</h3>
+				<p class="testimonial__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quas
+					dolore neque doloribus, est quia et quisquam reiciendis quos suscipit vel accusantium eligendi.
+					Nobis recusandae ipsam harum doloribus voluptatem rem.</p>
+			</section>
+			<div class="container-editor">
+				<div class="editor__item">
+					<img src="{% static "img/reloj_11.jpg" %}" alt="" class="editor__img">
+					<a href="catalogo-index"><p class="editor__circle">EXPRESS YOUR STYLE
+						NOW </p></a>
+				</div>
+				<div class="editor__item">
+					<img src="{% static "img/reloj_12.jpg" %}" alt="" class="editor__img">
+					<a href="catalogo-index"><p class="editor__circle">EXPRESS YOUR STYLE
+						NOW</p></a>
+				</div>
+			</div>
+			
+			<section class="container-tips">
+				<div class="tip">
+					<i class="fa-solid fa-store"></i>
+					<h2 class="tip__title">Catalogo</h2>
+					<p class="tip__txt">los mejores productos a los mejores precios</p>
+					<a href="catalogo-index" class="btn-shop">SHOP NOW</a>
+				</div>
+				<div class="tip">
+					<i class="fa-solid fa-headset"></i>
+					<h2 class="tip__title">Soporte</h2>
+					<p class="tip__txt">Contactate con nosotros por medios de nuestras redes sociales</p>
+					<a href="nosotros_index" class="btn-shop">CONTACTANOS</a>
+				</div>
+			</section>
+		</div>
+		{% include  'footer.html' %}
+	</main>
+    <script type="text/javascript" src="{% static 'js/slider.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/menu.js' %}"></script>
+
+</body>
+<html>

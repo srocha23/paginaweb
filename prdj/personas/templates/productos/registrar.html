@@ -1,0 +1,186 @@
+
+{% if r %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{r}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{% endif %}
+
+{% if r2 %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{r2}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{% endif %}
+
+<form action="/insertar" enctype="multipart/form-data" method="post" id="producto_form" novalidate>
+    {% csrf_token %}
+    <div>
+    
+      <fieldset class="module aligned ">
+        
+            <div class="form-row field-imagen">
+
+                    <div>
+                            <div class="flex-container">
+                                
+                                    <label for="id_imagen">Imagen:</label>
+                                    
+                                        <input class= "producto_categoria_img" type="file" name="imagen" accept="image/*" id="id_imagen">
+                            </div>
+                    </div>
+            </div>
+            <BUTton>
+                <a href="catalogo-index">click</a>
+            </BUTton>
+        
+            <div class="form-row field-nombre_producto">
+
+                    <div>
+                            <div class="flex-container">
+                                
+                                    <label class="required" for="id_nombre_producto">Nombre producto:</label>
+                                    
+                                        <input type="text" name="nombre_producto" class="vTextField" maxlength="250" required id="id_nombre_producto">
+                                    
+                            </div>
+                        
+                    </div>
+                      
+            </div>
+        
+            <div class="form-row field-precio">
+                
+                    <div>
+                            <div class="flex-container">
+                                
+                                    <label class="required" for="id_precio">Precio:</label>
+                                    
+                                        <input type="number" name="precio" value="0.0" step="0.01" required id="id_precio">
+                                    
+                            </div>
+                    </div>
+                
+            </div>
+        
+            <div class="form-row field-descripcion">
+                
+                    <div>
+                        
+                            <div class="flex-container">
+                                
+                                    <label class="required" for="id_descripcion">Descripcion:</label>
+                                    
+                                        <input type="text" name="descripcion" class="vTextField" maxlength="250" required id="id_descripcion">
+                                    
+                            </div>
+                        
+                    </div>
+                
+            </div>
+        
+            <div class="form-row field-stock">
+                
+                
+                    <div>
+                        
+                            <div class="flex-container">
+                                
+                                    <label class="required" for="id_stock">Stock:</label>
+                                    
+                                        <select name="stock" required id="id_stock">
+      <option value="" selected>---------</option>
+    
+      <option value="Disponible">Disponible</option>
+    
+      <option value="Agotado">Agotado</option>
+    
+    </select>
+                                    
+                                
+                            </div>
+                        
+                    </div>
+                
+                
+            </div>
+        
+            <div class="form-row field-destacado">
+                
+                
+                    <div>
+                        
+                            <div class="flex-container checkbox-row">
+                                
+                                    <input type="checkbox" name="destacado" id="id_destacado" checked><label class="vCheckboxLabel" for="id_destacado">Destacado</label>
+                                
+                            </div>
+                        
+                    </div>
+                
+                
+            </div>
+        
+            <div class="form-row field-categoria">
+            
+            
+                <div>
+                    
+                        <div class="flex-container">
+                            
+                                <label class="required" for="id_categoria">Categoria:</label>
+                                
+                                    <div class="related-widget-wrapper" data-model-ref="categoria">
+
+    <select name="categoria" required="" id="id_categoria">
+        
+  <option value="" selected="">---------</option>
+
+  <option value="1">Relojes hombre</option>
+
+  <option value="2">Relojes mujer</option>
+
+  <option value="3">Locines hombre</option>
+
+  <option value="4">Locines hombre</option>
+
+</select>
+    
+        <a class="related-widget-wrapper-link change-related" id="change_id_categoria" data-href-template="/admin/personas/categoria/__fk__/change/?_to_field=id&amp;_popup=1" data-popup="yes" title="Change selected categoria"><img src="/static/admin/img/icon-changelink.svg" alt="Change"></a><a class="related-widget-wrapper-link add-related" id="add_id_categoria" data-popup="yes" href="/admin/personas/categoria/add/?_to_field=id&amp;_popup=1" title="Add another categoria"><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a><a class="related-widget-wrapper-link delete-related" id="delete_id_categoria" data-href-template="/admin/personas/categoria/__fk__/delete/?_to_field=id&amp;_popup=1" data-popup="yes" title="Delete selected categoria"><img src="/static/admin/img/icon-deletelink.svg" alt="Delete"></a><a class="related-widget-wrapper-link view-related" id="view_id_categoria" data-href-template="/admin/personas/categoria/__fk__/change/?_to_field=id" title="View selected categoria"><img src="/static/admin/img/icon-viewlink.svg" alt="View"></a>
+    
+</div>
+                                
+                            
+                        </div>
+                    
+                </div>
+            
+            
+        </div>
+
+
+    <div class="submit-row">
+
+        <input type="submit" value="Save" class="default" name="_save">
+        
+        <input type="submit" value="Save and add another" name="_addanother">
+        <input type="submit" value="Save and continue editing" name="_continue">
+        
+
+
+<script id="django-admin-form-add-constants"
+src="/static/admin/js/change_form.js"
+        
+data-model-name="producto"
+        
+async>
+</script>
+
+<script id="django-admin-prepopulated-fields-constants"
+    src="/static/admin/js/prepopulate_init.js"
+    data-prepopulated-fields="[]">
+</script>
+
+
+</div>
+</form></div>

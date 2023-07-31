@@ -1,0 +1,127 @@
+
+<!--
+    {% block buscador %}
+
+<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
+method="POST">
+  {% csrf_token %}
+  <div class="input-group">
+    <input type="text" class="main-header__input" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}">
+    <div class="input-group-append">
+      <button class="btn btn-primary" type="submit">
+        <i class="fas fa-search fa-sm"></i>
+      </button>
+    </div>
+  </div>
+</form>
+{% endblock buscador %}
+-->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Watch Store</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="img/jpeg" href="{%  static 'img/icon.jpeg' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link type='text/css' href='{% static "css/carrito.css" %}' rel='stylesheet'/>
+    <title>Descripcion</title>
+</head>
+
+<body>
+   {% include  'header.html' %}
+
+    <div class="wrapper">
+
+        <header class="header-mobile">
+            <h1 class="logo">Quality Store</h1>
+            <button class="open_menu_carrito" id="open_menu">
+
+            </button>
+        </header>
+
+        <aside>
+            <button class="close-menu" id="close-menu">
+                
+            </button>
+
+            <header>
+                <h1 class="logo">Quality Store</h1>
+            </header>
+    <button>
+        <a href="registrar_producto"> Registre un nuevo producto</a>
+    </button>
+    <button>
+        <a href="actualizar_producto"> Actualice un producto</a>
+    </button>
+            <nav>
+                <ul class="menu_categoria">
+                    <li>
+                        <button id="todos" class="btn__categoria boton_categoria active">
+                            <i class="fa-solid fa-hand-point-up"></i>
+                            Todos los productos</button>
+                    </li>
+                    <li>
+                        <button id="reloj_h" class="btn__categoria"><i class="fa-regular fa-hand-point-up"></i>
+                            Relojes para
+                            hombre</button>
+                    </li>
+                    <li>
+                        <button id="reloj_m" class="btn__categoria"><i class="fa-regular fa-hand-point-up"></i>
+                            Relojes para
+                            mujer</button>
+                    </li>
+                    <li>
+                        <button id="perfumes_h" class="btn__categoria"><i class="fa-regular fa-hand-point-up"></i>
+                            Lociones para
+                            hombres</button>
+                    </li>
+                    <li>
+                        <button id="perfumes_m" class="btn__categoria"><i class="fa-regular fa-hand-point-up"></i>
+                            Lociones de
+                            mujer</button>
+                    </li>
+
+                    <li>
+                        <a class="btn__categoria  btn__carrito " href="carrito.html">
+                            <i class="fa-sharp fa-solid fa-cart-shopping"></i> Carrito <span id="numero"
+                                class="numero">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </aside>
+
+        <main>
+            <h2 class="titulo_principal_categoria" id="titulo_principal_categoria">TODOS LOS PRODUCTOS</h2>
+            <div id="container_categoria" class="container_categoria">
+                    {% for producto in productos %}
+                    <div class="producto_categoria">
+                        <img class="producto_categoria_img" src="../media/{{producto.imagen}}" alt="">
+                        <div class="producto_detalles">
+                        <h3 class="titulo_producto">{{producto.nombre_producto}}</h3>
+                        <p class="precio_producto">{{producto.precio}}</p>
+                        <p class="precio_producto">{{producto.descripcion}}</p>
+                        <button class="btn__producto_categoria" id="{{producto.id}}" >Comprar ahora</button>
+                        <button  class="btn__producto_categoria"><a href="detalle_producto/{{producto.id}}">Detalles</a></button>
+                        </div>
+                     </div>
+                     {% endfor %}
+    
+        </main>
+    </div>
+
+    <script type="text/javascript" src="{% static 'js/main_catalogo.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/menu.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/carrito.js' %}"></script>
+ 
+</body>
+{% include  'footer.html' %}
+</html>

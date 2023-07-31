@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido_catalogo</title>
+</head>
+
+<body>
+    <h1>Catalogos</h1>
+    <div>
+        Numero de domicilios: {{no_domicilio}}
+    </div>
+    <div>
+        <a href="nuevo_domi">Agregar</a>
+    </div>
+    
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID Domicilio</th>
+                    <th>Calle</th>
+                    <th>No calle</th>
+                    <th>Pais</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for domicilio in domicilios %}
+                <tr>
+                    <td>{{domicilio.id}}</td>
+                    <td>{{domicilio.calle}}</td>
+                    <td>{{domicilio.no_calle}}</td>
+                    <td>{{domicilio.pais}}</td>
+                    <td><a href="detalle_domi/{{domicilio.id}}">Detalles</a></td>
+                    <td><a href="editar_domi/{{domicilio.id}}">Editar</a></td>
+                    <td><a href="eliminar_domi/{{domicilio.id}}">Eliminar</a></td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    <a href="{% url 'index' %}">Volver a inicio</a>
+    </div>
+</body>
+</html>
