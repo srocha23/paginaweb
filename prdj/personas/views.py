@@ -1,15 +1,10 @@
+
 from django.shortcuts import render, get_object_or_404, redirect
 from personas.models import Persona, Domicilio , Producto , Categoria , ImagenProducto
 #from django.forms import modelform_factory
 from personas.forms import PersonaForm , DomicilioForm , CategoriaForm
 
 # Create your views here.
-
-def detallePersona(request, id):
-    persona = get_object_or_404(Persona, pk=id)
-    return render(request, 'personas/detalle.html', {'persona': persona} )
-
-#PersonaForm = modelform_factory(Persona, exclude=[])
 
 def nuevaPersona(request):
     if request.method == 'POST':
@@ -73,12 +68,12 @@ def eliminarDomi(request, id):
 
 def detalleProducto(request, id):
     producto = get_object_or_404(Producto, pk=id)
-    #imgp = get_object_or_404(ImagenProducto, pk=id)
 
     return render(request, 'productos/detallep.html', {'producto':producto})
 
 def formregistrar(request):
     return render(request, 'productos/registrar.html')
+
 
 def registrarProducto(request):
 
@@ -95,7 +90,7 @@ def registrarProducto(request):
             datos = {'r2': 'Duplicado ('+str(nom)+') Ya Existe'}   
             return render(request, 'productos/registrar.html', datos)
         else:
-            pel = Producto(nombre_producto=nom, imagen=fot, precio=pre, descripcion=desc, stock=sto)
+            pel = Producto(nombre_producto=nom, imagen=fot, precio=pre, descripcion=desc, stock=sto, formaProducto=CategoriaForm)
             pel.save()
             datos = {'r':'Producto ('+str(nom)+') registrado'}
             return render(request, 'productos/registrar.html', datos)
@@ -104,10 +99,39 @@ def registrarProducto(request):
         datos = {'r2': 'No se puede'}
         return render(request, 'productos/registrar.html')
 
+
+
 def formactualizar(request):
+
     return render(request, 'productos/actualizar.html')
 
 
 def nosotros(request):
-
     return render(request, 'nosotros.html')
+
+
+def editarDomi(request, id):
+    domicilio = get_object_or_404(Domicilio, pk=id)
+    if request.method == 'POST':
+        formaDomi = DomicilioForm(request.POST, instance = domicilio)
+        if formaDomi.is_valid():
+            formaDomi.save()
+            return redirect('cata')
+    else:
+        formaDomi = DomicilioForm(instance=domicilio)
+
+    return render(request, 'domicilio/editard.html', {'formaDomi':formaDomi})
+
+
+#def formactualizar(request):
+    #producto = get_object_or_404(Producto, pk=id)
+    #if request.method == 'POST':
+        #formaProd = CategoriaForm(request.POST, instance=producto)
+       # if #formaProd.is_valid():
+            #formaProd.save()
+            #return redirect('catalogo-index')
+        
+        #else:
+            #formaProd = CategoriaForm(intance=producto)
+
+    #return render(request, 'productos/actualizar.html' , {'formaProd':formaProd})

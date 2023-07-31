@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404, render
+from django.db.models import Q
 from personas.models import Persona, Domicilio , Producto
 
 # Create your views here.
@@ -25,5 +26,14 @@ def catalogo2(request):
     return render(request, 'catalogo.html', {'no_producto':no_producto, 'productos':productos})
 
 def listadoProductos(request):
+    busqueda = request.GET.get("buscar")
     productos = Producto.objects.all()
+
+    if busqueda:
+        productos = Producto.objects.filter(
+            Q(nombre_producto__icontains = busqueda) |
+            Q(categoria__icontains = busqueda) |
+            Q()
+        )
+
     return render (request, "catalogo.html", {"productos": productos})
