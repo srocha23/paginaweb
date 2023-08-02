@@ -44,7 +44,6 @@ img {
     color: white;
 }
 
-
 /*Estilos del menu*/
 
 .main-title {
@@ -126,6 +125,12 @@ img {
 
 .main {
     padding: 0 20px;
+}
+.input-group{
+    display: block;
+    padding: 2px;
+    width: auto;
+    border: 2px solid rgb(255, 255, 255);
 }
 
 /*Estilos de slider*/

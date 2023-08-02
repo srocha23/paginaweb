@@ -31,9 +31,8 @@ def listadoProductos(request):
 
     if busqueda:
         productos = Producto.objects.filter(
-            Q(nombre_producto__icontains = busqueda) |
-            Q(categoria__icontains = busqueda) |
-            Q()
-        )
+            Q(nombre_producto__icontains = busqueda) 
+            #Q(categoria__icontains = busqueda) 
+        ).distinct()
 
     return render (request, "catalogo.html", {"productos": productos})

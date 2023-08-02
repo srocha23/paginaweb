@@ -48,12 +48,8 @@
 method="GET">
   {% csrf_token %}
   <div class="input-group">
-    <input type="text" class="main-header__input" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}">
-    <div class="input-group-append">
-      <button class="btn btn-primary" type="submit">
-        <i class="fas fa-search fa-sm"></i>
-      </button>
-    </div>
+	<button class="btn btn-primary" type="submit"><i class="fas fa-search fa-sm"></i></button>
+    <input type="text" class="main-header__input" placeholder="Buscar..." name="buscar" value="{{ request.GET.buscar }}">
   </div>
 </form>
 {% endblock buscador %}
