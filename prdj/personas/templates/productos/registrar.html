@@ -97,23 +97,13 @@
     
       <option value="Agotado">Agotado</option>
     
-    </select>
-                                    
-                                
-                            </div>
-                        
-                    </div>
-                
-                
+    </select>                                                              
+                            </div>                       
+                    </div>             
             </div>
-        
-            <div class="form-row field-destacado">
-                
-                
-                    <div>
-                        
-                            <div class="flex-container checkbox-row">
-                                
+            <div class="form-row field-destacado">                      
+                    <div>                
+                            <div class="flex-container checkbox-row">              
                                     <input type="checkbox" name="destacado" id="id_destacado" checked><label class="vCheckboxLabel" for="id_destacado">Destacado</label>
                                 
                             </div>
@@ -124,34 +114,8 @@
             </div>
         
             <div class="form-row field-categoria">
-            
-            
-                <div>
-                    
-                        <div class="flex-container">
-                            
-                                <label class="required" for="id_categoria">Categoria:</label>
-                                
-                                    <div class="related-widget-wrapper" data-model-ref="categoria">
+            <form action="GET">{{formaProducto}}</form>
 
-    <select name="categoria" required="" id="id_categoria">
-        {% for categorias in categoria %}
-  <option value="" selected="">---------</option>
-  <option value="{{categorias.id}}">{{categorias.nombre}}</option>
-
-        {% endfor %}
-</select>
-    
-        <a class="related-widget-wrapper-link change-related" id="change_id_categoria" data-href-template="/admin/personas/categoria/__fk__/change/?_to_field=id&amp;_popup=1" data-popup="yes" title="Change selected categoria"><img src="/static/admin/img/icon-changelink.svg" alt="Change"></a><a class="related-widget-wrapper-link add-related" id="add_id_categoria" data-popup="yes" href="/admin/personas/categoria/add/?_to_field=id&amp;_popup=1" title="Add another categoria"><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a><a class="related-widget-wrapper-link delete-related" id="delete_id_categoria" data-href-template="/admin/personas/categoria/__fk__/delete/?_to_field=id&amp;_popup=1" data-popup="yes" title="Delete selected categoria"><img src="/static/admin/img/icon-deletelink.svg" alt="Delete"></a><a class="related-widget-wrapper-link view-related" id="view_id_categoria" data-href-template="/admin/personas/categoria/__fk__/change/?_to_field=id" title="View selected categoria"><img src="/static/admin/img/icon-viewlink.svg" alt="View"></a>
-    
-</div>
-                                
-                            
-                        </div>
-                    
-                </div>
-            
-            
         </div>
 
 

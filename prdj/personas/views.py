@@ -2,7 +2,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from personas.models import Persona, Domicilio , Producto , Categoria , ImagenProducto
 #from django.forms import modelform_factory
-from personas.forms import PersonaForm , DomicilioForm , CategoriaForm
+from personas.forms import PersonaForm , DomicilioForm , CategoriaForm, ProductoForm
 
 # Create your views here.
 
@@ -72,33 +72,37 @@ def detalleProducto(request, id):
     return render(request, 'productos/detallep.html', {'producto':producto})
 
 def formregistrar(request):
-    return render(request, 'productos/registrar.html')
+    formaProducto = ProductoForm(request.POST)
+    return render(request, 'productos/registrar2.html', {'formaProducto':formaProducto})
 
 
 def registrarProducto(request):
 
     if request.method == 'POST':
-        formaProducto = CategoriaForm(request.POST, instance = Categoria)
+        formaProducto = ProductoForm(request.POST)
         nom = request.POST['nombre_producto']
         fot = request.FILES['imagen']
         pre = request.POST['precio']
         desc =request.POST['descripcion']
         sto = request.POST['stock']
-        
+        cat = request.POST['categoria_id']
         comprobarNombre = Producto.objects.filter(nombre_producto = nom)
         if comprobarNombre:
-            datos = {'r2': 'Duplicado ('+str(nom)+') Ya Existe'}   
-            return render(request, 'productos/registrar.html', datos)
+            datos = {'r2': 'Duplicado ('+str(nom)+') Ya Existe'}
+            return redirect('productos/registrar2.html')
+            #return render(request, 'productos/registrar2.html', {'datos':datos})
         else:
-            pel = Producto(nombre_producto=nom, imagen=fot, precio=pre, descripcion=desc, stock=sto, formaProducto=CategoriaForm)
+            pel = Producto(nombre_producto=nom, imagen=fot, precio=pre, descripcion=desc, stock=sto, categoria_id=cat )
             pel.save()
             datos = {'r':'Producto ('+str(nom)+') registrado'}
-            return render(request, 'productos/registrar.html', datos)
+            return redirect('productos/registrar2.html')
+           # return render(request, 'productos/registrar2.html', {'datos':datos})
 
     else:
         datos = {'r2': 'No se puede'}
-        return render(request, 'productos/registrar.html')
+        formaProducto = ProductoForm()
 
+    return render(request, 'productos/registrar2.html',{'formaProducto':formaProducto, 'datos':datos})
 
 
 def formactualizar(request):
