@@ -1,13 +1,5 @@
 {% include  'header.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
     {% if r %}
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{r}}
@@ -40,5 +32,4 @@ data-prepopulated-fields="[]">
 </script>
 </div>
     </form>
-</body>
-</html>
+    {% include  'footer.html' %}

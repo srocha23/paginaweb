@@ -79,7 +79,7 @@ def formregistrar(request):
 def registrarProducto(request):
 
     if request.method == 'POST':
-        formaProducto = ProductoForm(request.POST)
+        #formaProducto = ProductoForm(request.POST)
         nom = request.POST['nombre_producto']
         fot = request.FILES['imagen']
         pre = request.POST['precio']
@@ -89,20 +89,22 @@ def registrarProducto(request):
         comprobarNombre = Producto.objects.filter(nombre_producto = nom)
         if comprobarNombre:
             datos = {'r2': 'Duplicado ('+str(nom)+') Ya Existe'}
-            return redirect('productos/registrar2.html')
+            #return redirect('productos/registrar2.html')
+            return render(request, 'productos/registrar2.html', {'datos':datos})
             #return render(request, 'productos/registrar2.html', {'datos':datos})
         else:
             pel = Producto(nombre_producto=nom, imagen=fot, precio=pre, descripcion=desc, stock=sto, categoria_id=cat )
             pel.save()
             datos = {'r':'Producto ('+str(nom)+') registrado'}
-            return redirect('productos/registrar2.html')
+            return render(request, 'productos/registrar.html', {'datos':datos})
+            #return redirect('productos/registrar2.html')
            # return render(request, 'productos/registrar2.html', {'datos':datos})
 
     else:
         datos = {'r2': 'No se puede'}
         formaProducto = ProductoForm()
-
-    return render(request, 'productos/registrar2.html',{'formaProducto':formaProducto, 'datos':datos})
+    return render(request, 'productos/registrar2.html')
+   #return render(request, 'productos/registrar2.html',{'formaProducto':formaProducto, 'datos':datos})
 
 
 def formactualizar(request):
