@@ -1,6 +1,6 @@
 {% include  'header.html' %}
 {% load static %}
-    {% if r %}
+{% if r %}
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{r}}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -13,23 +13,23 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 {% endif %}
-    <form action="POST">
+
+<form action="/insertar" enctype="multipart/form-data" method="post" id="producto_form" novalidate>
 {% csrf_token %}
 {{formaProducto.as_p}}
 <div class="submit-row">
-    <a href="insertar">guardar</a>
     <input type="submit" value="Save" class="default" name="_save">
-    <input type="submit" value="Save and add another" name="_addanother">
-    <input type="submit" value="Save and continue editing" name="_continue">
-<script id="django-admin-form-add-constants"
-src="/static/admin/js/change_form.js"
-data-model-name="producto"
-async>
-</script>
-<script id="django-admin-prepopulated-fields-constants"
-src="/static/admin/js/prepopulate_init.js"
-data-prepopulated-fields="[]">
-</script>
 </div>
     </form>
     {% include  'footer.html' %}
+    <!--
+    <script id="django-admin-form-add-constants"
+    src="/static/admin/js/change_form.js" 
+    data-model-name="producto"
+    async>
+    </script>
+    <script id="django-admin-prepopulated-fields-constants"
+        src="/static/admin/js/prepopulate_init.js"
+        data-prepopulated-fields="[]">
+    </script>
+    -->

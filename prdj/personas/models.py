@@ -4,18 +4,7 @@ from django.db import models
 # Create your models here.
 
 class Categoria(models.Model):
-    id = models.AutoField(primary_key=True)
-    cate1 = 'Relojes hombre'
-    cate2 = 'Relojes mujer'
-    cate3 = 'Locines hombre'
-    cate4 = 'Lociones mujer'
-    categorias = (
-        (cate1, 'Relojes hombre'),
-        (cate2, 'Relojes mujer'),
-        (cate3, 'Locines hombre'),
-        (cate4, 'Lociones mujer'),
-    )
-    nombre = models.CharField(max_length=250, choices=categorias)
+    nombre = models.CharField(max_length=250)
     slug=AutoSlugField(populate_from='nombre')
 
     def __str__(self) :

@@ -1,0 +1,67 @@
+{% include 'header.html' %}
+
+<div class="wrapper">
+
+    <header class="header-mobile">
+        <h1 class="logo">Quality Store</h1>
+        <button class="open_menu_carrito" id="open_menu">
+        </button>
+    </header>
+    <aside>
+        <header>
+            <h1 class="logo">Quality Store</h1>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a class="btn__categoria  btn__volver__carrito" href="/catalogo-index">
+                        <i class="fa-solid fa-arrow-left"></i> Seguir comprando
+                    </a>
+                </li>
+                <li>
+                    <a class="btn__categoria  btn__carrito active" href="carrito.html"> Comprar </a>
+                </li>
+            </ul>
+        </nav>
+        <footer>
+            <p class="texto_footer">© Watch Store </p>
+        </footer>
+    </aside>
+
+    <main>
+        <h2 class="titulo_principal_categoria">Carrito de compras</h2>
+        <div class="container_carrito">
+            <!--
+            <p id="carrito_vacio" class="carrito_vacio"> Tu carrito esta vacio <i
+                    class="fa-regular fa-face-frown"></i>
+            </p>
+            -->
+            <div id="carrito_productos" class="carrito_productos disabled">
+                <!-- Esto se va a completar con el JS --> 
+            </div>
+
+            <div id="carrito_acciones" class="carrito_acciones disabled">
+                <div class="carrito_acciones_izquierda">
+                    <button id="carrito_accion_vaciar" class="carrito_accion_vaciar ">Vaciar carrito
+                        <i class="fa-regular fa-cart-xmark"></i></button>
+                </div>
+
+                <div class="carrito_acciones_derecha">
+                    <div class="carrito_acciones_total">
+                        <p>Total: </p>
+                        <p id="total_carrito"> $40000</p>
+                    </div>
+                    <button id="carrito_accion_comprar" class="carrito_accion_comprar ">Comprar ahora</button>
+                </div>
+        
+            </div>
+            <!--
+            <p id="carrito_comprado" class="carrito_comprado disabled">Muchas gracias por su compra.
+                <i class="fa-regular fa-face-smile"></i>
+            </p>
+            -->
+        </div>
+    </main>
+    </div>
+
+{% include 'footer.html' %}

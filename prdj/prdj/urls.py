@@ -13,19 +13,18 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 from webapp.views import inicio,  listadoProductos
-from personas.views import detalleProducto , formregistrar ,formactualizar, registrarProducto , nosotros
-
-
+from personas.views import detalleProducto , formactualizar, registrarProducto , nosotros , carritos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', inicio, name='index_inicio'),
     path('detalle_producto/<int:id>', detalleProducto),
-    path('catalogo-index', listadoProductos),
-    path('registrar_producto', formregistrar ),
-    path('actualizar_producto', formactualizar ),
-    path('insertar', registrarProducto ),
-    path('nosotros_index', nosotros),
+    path('catalogo-index', listadoProductos, name='catalo'),
+    path('registrar_producto', registrarProducto, name='registrar' ),
+    path('actualizar_producto', formactualizar, name='actualizar' ),
+    path('insertar', registrarProducto, name='insertar' ),
+    path('nosotros_index', nosotros, name='nosotros'),
+    path('carrito', carritos, name='carrito'),
 ]
 
 if settings.DEBUG:

@@ -1,3 +1,4 @@
+from winreg import QueryInfoKey
 from django.forms import EmailInput, ModelForm, TextInput, FileInput, Select
 from personas.models import Persona , Domicilio , Producto , Categoria
 
@@ -24,8 +25,8 @@ class ProductoForm(ModelForm):
         model = Producto
         fields = '__all__'
         widgets = {
-            'imagen': FileInput(attrs={'accept': 'image/*'}),
-            #'categoria': Select(queryset=Categoria.objects.all(), attrs={'accept':'Categoria'})
+            'imagen': FileInput(attrs={'accept': 'image/*'})
+            #'categoria': Select(QueryInfoKey=Categoria.objects.all(), attrs={'accept':'Categoria'})
         }
 
 class CategoriaForm(ModelForm):
