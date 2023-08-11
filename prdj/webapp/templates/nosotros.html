@@ -1,37 +1,45 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-</head>
+<html>
 <body>
     {% include  'header.html' %}
     <div class="conta_slider">
-        <img src="{% static "img/fondo1.jpg" %}" alt="" class="">
+        <!--
+        <img src="{% static "img/fondo1.jpg" %}" alt="" class="fondo_slider">
+        -->
+        <img src="{% static "img/gif2.gif" %}" class="fondo_slider">
         <img src="{% static "img/logo.png" %}" alt="" class="logo_slider">
-        <div>
             <h3 class="texto_slider">Un reloj es más que una simple herramienta para medir el tiempo. 
                 Es una declaración de estilo, una representación de tu personalidad y una forma de expresar tu 
-                individualidad.
+                individualidad.</h3>
                 <!--
                 <br> 
-                En nuestra tienda,encontrarás una amplia selección de relojes de las mejores marcas del mundo,todos ellos diseñados para complementar tu estilo único</h3>
+                En nuestra tienda,encontrarás una amplia selección de relojes de las mejores marcas del mundo,todos ellos diseñados para complementar tu estilo único
                 -->
-            </div>
-    <div class="contenidon">
-        <div class="contenedor_about">
-            <h1>Sobre nosotros</h1>
-            <h2 class="text_about">
-                Somos una tienda de relojes online que ofrece una amplia variedad de relojes para hombre, mujer y niño.
-                 Contamos con las mejores marcas del mercado, como Rolex, Omega, Cartier, Patek Philippe, y muchas más.
-                 También ofrecemos una variedad de estilos, desde relojes clásicos hasta relojes deportivos.
-            </h2>
         </div>
-    </div>
-
+<div class="container_about">
+        <div class="contenedor_about">
+            <div class="text_about">
+                <h2>
+                    <h1>Sobre nosotros</h1>
+                    <br>
+                    Somos una tienda de relojes online que ofrece una amplia variedad de relojes para hombre, mujer y niño.
+                     Contamos con las mejores marcas del mercado, como Rolex, Omega, Cartier, Patek Philippe, y muchas más.
+                     También ofrecemos una variedad de estilos, desde relojes clásicos hasta relojes deportivos.
+                </h2>
+            </div>
+            <div class="text_about">
+                <!--
+                <img src="{% static "img/icon.jpeg" %}" class="img_about">
+                 <img src="{% static "img/fondo1.jpg" %}" alt="" class="fondo_slider">
+                -->
+                <img src="{% static "img/fondo1.jpg" %}" alt="" class="img_about">
+            </div>
+        </div>
+        
     <div>
         <div class="map_about">
-            <h1 class="title_map">Encuentranos aqui!!</h1>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1988.4375745414527!2d-74.06926541689539!3d4.616351769413241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f999b2058fb71%3A0xc0ae464f7759f98d!2sPrograma%20Fortalecimiento%20De%20Museos!5e0!3m2!1ses!2sco!4v1691613992596!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <h1 class="title_map">Nuestras tiendas</h1>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1988.4375745414527!2d-74.06926541689539!3d4.616351769413241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f999b2058fb71%3A0xc0ae464f7759f98d!2sPrograma%20Fortalecimiento%20De%20Museos!5e0!3m2!1ses!2sco!4v1691613992596!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mapp"></iframe>
         </div>
     </div> 
     <section class="container-tips">
@@ -52,17 +60,7 @@
                 <a href="catalogo-index" class="btn-shop">Registrar</a>
             </div>
     </section>
-<!--
-    <div class="product_about">
-        <div class="product_a">
-            <div>
-            </div>
-            <div>
-            </div>
-        </div>
-    </div>
--->
-    {% include  'footer.html' %}
-    </div>
+</div>
 </body>
+{% include  'footer.html' %}
 </html>

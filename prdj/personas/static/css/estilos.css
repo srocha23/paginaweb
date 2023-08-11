@@ -362,6 +362,7 @@ img {
     background-color: #3a444a;
     text-align: center;
     border-radius: 1rem;
+    margin-block-end: 2rem;
 }
 
 .tip { 
@@ -424,6 +425,7 @@ img {
         margin: 15px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        margin-block-end: 2rem;
 
     }
 }
