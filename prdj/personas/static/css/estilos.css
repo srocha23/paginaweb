@@ -16,6 +16,9 @@ img {
 .main-header {
     padding: 0 20px;
     background-color: #3a444a;
+    /*
+    background-image: linear-gradient(black,purple,black);
+    */
 }
 
 .main-header__title {
