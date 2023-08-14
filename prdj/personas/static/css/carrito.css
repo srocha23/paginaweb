@@ -804,8 +804,8 @@ hr {
     left: 50%;
     transform: translate(-50%, -138%);
     opacity: 0.8;
-    height: 30rem;
-    width: 30rem;
+    height: 25rem;
+    width: 22rem;
     z-index: 1;
 }
 

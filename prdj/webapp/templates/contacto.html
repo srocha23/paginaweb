@@ -1,0 +1,27 @@
+{% load static %}
+
+<html>
+    <body>
+        <form class="formulario" action="/register" method="post">
+            <input class="nom" type="text" name="name" placeholder="Nombres">
+            <input class="ape" type="text" name="name" placeholder="Apellidos">
+            <input class="cor" type="email" name="email" placeholder="Correo electrónico">
+            <input class="cont" type="password" name="password" placeholder="Contraseña">
+            <input class="buton_registrar" type="submit" value="Registrar">
+          </form>
+    </body>
+    <style>
+
+        body {
+            background: linear-gradient(45deg, #BB1881, #F88B50)
+        }
+        .formulario{
+            padding: 1rem;
+            display: grid;
+            text-align: center;
+            margin-left: 4rem;
+            border-radius: 1rem;
+            border: 2px solid black;
+        }
+        </style>
+</html>

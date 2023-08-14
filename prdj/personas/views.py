@@ -110,6 +110,9 @@ def carritos(request):
 def nosotros(request):
     return render(request, 'nosotros.html')
 
+def contact(request):
+    return render(request, 'contacto.html')
+
 
 def editarDomi(request, id):
     domicilio = get_object_or_404(Domicilio, pk=id)
