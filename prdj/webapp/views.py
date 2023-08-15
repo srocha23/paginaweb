@@ -1,6 +1,8 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.db.models import Q
 from personas.models import Persona, Domicilio , Producto
+from personas.forms import Userform
+from django.contrib.auth import login , authenticate
 
 # Create your views here.
 
@@ -36,3 +38,20 @@ def listadoProductos(request):
         ).distinct()
 
     return render (request, "catalogo.html", {"productos": productos})
+
+def registro(request):
+    data = {
+        'form':Userform()
+    }
+
+    if request.method == 'POST':
+        formulario = Userform(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            username = formulario.cleaned_data['username']
+            pasword = formulario.cleaned_data['pasword']
+            user = authenticate(username=username, pasword=pasword)
+            login(request, user)
+            return redirect(to='index_inicio')
+
+    return render(request, "contacto.html", data)

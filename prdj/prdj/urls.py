@@ -12,7 +12,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-from webapp.views import inicio,  listadoProductos
+from webapp.views import inicio,  listadoProductos , registro
 from personas.views import detalleProducto , formactualizar, registrarProducto , nosotros , carritos , contact
 
 urlpatterns = [
@@ -25,7 +25,8 @@ urlpatterns = [
     path('insertar', registrarProducto, name='insertar' ),
     path('nosotros_index', nosotros, name='nosotros'),
     path('carrito', carritos, name='carrito'),
-    path('contacto', contact, name='contacto'),
+    path('contacto', registro, name='contacto'),
+    #path('registro', registro, name='registro_usuario'),
 ]
 
 if settings.DEBUG:

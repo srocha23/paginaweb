@@ -2,31 +2,34 @@
 
 <html>
     <body>
-        <form class="formulario" action="/register" method="post">
-            <h2 class="title_form">Registro usuario</h2>
-            <input class="nom" type="text" name="name" placeholder="Nombres">
-            <input class="ape" type="text" name="name" placeholder="Apellidos">
-            <input class="cor" type="email" name="email" placeholder="Correo electrónico">
-            <input class="cont" type="password" name="password" placeholder="Contraseña">
-            <input class="buton_registrar" type="submit" value="Registrar">
-            <input class="buton_registrar" type="submit" href="contacto" value="Regresar">
+        {% include 'header.html' %}
+        <form class="formulario" action="" method="post">
+            {% csrf_token %}
+            <table>
+                {{form.as_table}}
+
+            </table>
+            <input class="buton_form" type="reset" value="Limpiar">
+            <input class="buton_form" type="submit" value="Registrar">
           </form>
     </body>
     <style>
 
         body {
-            background: linear-gradient(45deg, #BB1881, #F88B50);
+            background: linear-gradient(45deg, black, gray, white, black);
             font-family: sans-serif;
         }
         .formulario{
-            margin: 14rem auto;
-            padding: 1rem;
+            font-family: 'Sofia Sans', sans-serif;
+            background-color: rgb(225, 225, 225);
+            margin: 4rem auto;
+            padding: 3rem;
             display: grid;
             align-items: center;
             justify-content: center;
             border-radius: 1rem;
             border: 2px solid black;
-            width: 25rem;
+            inline-size: 36rem;
         }
         .title_form{
             text-align: center;
@@ -37,12 +40,16 @@
             color:  #BB1881;
         }
         input{
-            width: 20rem;
+            inline-size: 20rem;
             text-align: center;
             border-radius: 0,5rem;
         }
-
-        .buton_registrar:hover{
+        .buton_form{
+            padding: 0.3rem;
+            margin-inline-start: 5rem;
+            margin-block-start: 0.5rem ;
+        }
+        .buton_form:hover{
             cursor: pointer;
             color: #BB1881;
         }

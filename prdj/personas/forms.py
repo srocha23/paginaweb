@@ -1,6 +1,7 @@
 from winreg import QueryInfoKey
 from django.forms import EmailInput, ModelForm, TextInput, FileInput, Select
 from personas.models import Persona , Domicilio , Producto , Categoria
+from django.contrib.auth.forms import UserCreationForm
 
 
 class PersonaForm(ModelForm):
@@ -36,3 +37,6 @@ class CategoriaForm(ModelForm):
         widgets = {
             'nombre': TextInput(attrs={'type': 'text'})
         }
+
+class Userform(UserCreationForm):
+    pass
