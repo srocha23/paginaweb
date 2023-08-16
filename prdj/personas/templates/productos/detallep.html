@@ -27,6 +27,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="img/jpeg" href="{% static "img/icon.jpeg" %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <title>Producto</title>
 </head>
@@ -87,7 +88,7 @@
   
       <div class = "product-content">
         <h2 class = "product-title">{{producto.nombre_producto}}</h2>
-        <a href = "/" class = "product-link">Visita Watch Store</a>
+        <a href = "{% url 'index_inicio' %}" class = "product-link">Inicio Watch Store</a>
         <div class = "product-rating">
           <div>{{producto.destacado}}<i class="fa-solid fa-star" style="color: #fbff00;"></i></div>
         </div>
@@ -98,11 +99,11 @@
   
         <div class = "product-detail">
           <h2>Acerca del producto: </h2>
-          <p class="precio_producto">{{producto.descripcion}}</p>
+          <p class="descri_producto">{{producto.descripcion}}</p>
           <ul>
             <li>Color: <span>Black</span></li>
-            <li>Available: <span>in stock</span></li>
-            <li>Categoria <span>{{categoria.nombre}}</span></li>
+            <li>Stok: <span>{{producto.stock}}</span></li>
+            <li>Categoria <span>{{producto.categoria.nombre}}</span></li>
             <li>Area de venta: <span>Colombia</span></li>
           </ul>
         </div>
@@ -114,12 +115,12 @@
           Añadir al carro <i class = "fas fa-shopping-cart"></i>
         </button>
         -->
-
-        <button type = "button" class = "btn"><a href="/carrito">Carrito</a></button>
+        <button type = "button" class = "btn"><a href="/carrito">Ir al carrito</a></button>
         <button type = "button" class = "btn"><a href="/catalogo-index">Volver</a></button>
+        <button type = "button" class = "btn"><a href="../">Agregar al carrito</a></button>
   
       <div class = "social-links">
-        <p>Social: </p>
+        <p>Social :   </p>
         <a href = "#">
           <i class = "fab fa-facebook-f"></i>
         </a>
@@ -175,33 +176,37 @@ window.addEventListener('resize', slideImage);
     padding: 0;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    font-style: italic;
 }
 
 body{
     line-height: 1.5;
     font-family: monospace;
     justify-content: center;
-    background-color: #252B37;
+    background: linear-gradient(45deg, black, gray, white, black);
 }
 a{
   color: white;
   text-decoration: none;
 }
 .card-wrapper{
-    max-width: 1100px;
+    max-inline-size: 1100px;
     margin: 0 auto;
 }
 .card{
-  background-color: grey;
+  background-color: dimgrey;
   border-radius: 2rem;
-  box-shadow: black;
 }
+/*
 .btn:hover{
 background-color: #010000;
 }
+*/
+
 img{
     width: 100%;
     display: block;
+    border-radius: 2rem;
 }
 .img-display{
     overflow: hidden;
@@ -238,6 +243,10 @@ img{
     position: relative;
     color: #12263a;
     margin: 1rem 0;
+    text-shadow:
+    1px 1px 1px red,
+    2px 2px 1px red;
+    letter-spacing: 0.5px;
 }
 .product-title::after{
     content: "";
@@ -245,23 +254,22 @@ img{
     left: 0;
     bottom: 0;
     height: 4px;
-    width: 80px;
+    width: 100%;
     background: #12263a;
 }
 .product-link{
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 0.9rem;
     display: inline-block;
     margin-bottom: 0.5rem;
-    background: #256eff;
     color: #fff;
     padding: 0 0.3rem;
     transition: all 0.5s ease;
 }
 .product-link:hover{
-    opacity: 0.9;
+  color: #256eff;
+  opacity: 0.9;
 }
 .product-rating{
     color: #ffc107;
@@ -273,7 +281,7 @@ img{
 .product-price{
     margin: 1rem 0;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 900;
 }
 .product-price span{
     font-weight: 400;
@@ -319,7 +327,11 @@ img{
 .number{
   border: 2px black;
 }
-
+.descri_producto{
+  font-style: italic;
+  font-weight: 900;
+  margin-inline-start: 4rem;
+}
 .purchase-info input,
 .purchase-info .btn{
     border: 1.5px solid #ddd;
@@ -330,20 +342,23 @@ img{
     margin-right: 0.2rem;
     margin-bottom: 1rem;
 }
-
 .purchase-info input{
     width: 60px;
 }
 .purchase-info .btn{
     cursor: pointer;
     color: #fff;
+    background: #256eff;
 }
+/*
 .purchase-info .btn:first-of-type{
     background: #256eff;
 }
 .purchase-info .btn:last-of-type{
     background: #256eff;
 }
+*/
+
 .purchase-info .btn:hover{
     opacity: 0.9;
     background-color: darkblue;

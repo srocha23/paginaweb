@@ -1,7 +1,7 @@
 {% load static %}
-<body>
+<html>
 	{% include  'header.html' %}
-
+<body>
 	<div class="container-slider">
 		<div class="slider" id="slider">
 
@@ -125,14 +125,14 @@
 					<i class="fa-solid fa-headset"></i>
 					<h2 class="tip__title">Soporte</h2>
 					<p class="tip__txt">Contactate con nosotros por medios de nuestras redes sociales</p>
-					<a href="nosotros_index" class="btn-shop">CONTACTANOS</a>
+					<a href="contacto" class="btn-shop">CONTACTANOS</a>
 				</div>
 			</section>
 		</div>
-		{% include  'footer.html' %}
 	</main>
     <script type="text/javascript" src="{% static 'js/slider.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/menu.js' %}"></script>
 
 </body>
-<html>
+{% include  'footer.html' %}
+</html>

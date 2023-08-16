@@ -864,9 +864,14 @@ margin-left: 25%;
 }
 
 .title_map{
-    font-family: "fantasy", sans-serif;
+    font-family: 'Sofia Sans', sans-serif;
+    font-style: italic;
     text-align: center;
     font-size: 2.5rem;
     font-weight: bold;
-    margin-top: -3rem;
+    margin-block-start: -3rem;
+    color: rgb(255, 255, 255);
+    text-shadow:
+    2px 2px 2px red,
+    3px 3px 3px red;
 }

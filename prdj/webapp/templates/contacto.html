@@ -1,20 +1,18 @@
 {% load static %}
 
 <html>
+    {% include 'header.html' %}
     <body>
-        {% include 'header.html' %}
         <form class="formulario" action="" method="post">
             {% csrf_token %}
             <table>
                 {{form.as_table}}
-
             </table>
             <input class="buton_form" type="reset" value="Limpiar">
             <input class="buton_form" type="submit" value="Registrar">
           </form>
     </body>
     <style>
-
         body {
             background: linear-gradient(45deg, black, gray, white, black);
             font-family: sans-serif;
@@ -53,5 +51,5 @@
             cursor: pointer;
             color: #BB1881;
         }
-        </style>
+    </style>
 </html>

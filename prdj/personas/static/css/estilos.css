@@ -22,12 +22,15 @@ img {
 }
 
 .main-header__title {
-
     font-family: 'Sofia Sans', sans-serif;
+    font-style: italic;
     text-align: center;
     font-size: 2.5em;
     margin: 10px 0;
     color: rgb(255, 255, 255);
+    text-shadow:
+    2px 2px 2px red,
+    3px 3px 3px red;
 }
 
 .main-header__container {
